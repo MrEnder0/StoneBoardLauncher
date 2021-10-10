@@ -30,6 +30,14 @@ def startLauncher():
   stoneBoard_logo = pygame.transform.scale(stoneBoard_logo, (250, 250))
   screen.blit(stoneBoard_logo,(175,180))
   pygame.display.flip()
-  time.sleep(3)
+  
+  #loading
+  stoneBoard_loading = pygame.image.load('artAssets/loading.png').convert_alpha()
+  stoneBoard_loading = pygame.transform.scale(stoneBoard_loading, (150, 150))
+  screen.blit(stoneBoard_loading,(225,300))
+  pygame.display.flip()
+  time.sleep(0.30)
+  
+  time.sleep(4.5)
   boneIcon = pygame.transform.scale(boneIcon, (0, 0))
   pygame.quit()
