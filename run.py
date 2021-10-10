@@ -7,22 +7,42 @@ import os
 if CheckForUpdates == True:
     startLauncher()
     if Experintal == True:
-        shutil.rmtree("experimental")
-        os.remove('experimental.zip')
-        time.sleep(0.5)
-        dload.save_unzip("https://github.com/MrEnder0/StoneBoardPackages/archive/refs/heads/experimental.zip")
         source = 'experimental/StoneBoardPackages-experimental'
         dest = 'experimental/StoneBoardPackagesexperimental'
+        #delete old packages without error
+        try:
+            os.remove('experimental.zip')
+        except OSError:
+            pass
+        try:
+            shutil.rmtree("experimental")
+        except OSError:
+            print("No packages found making new ones")
+            pass
+        
+        print("Installing new experimental packages")
+        time.sleep(0.5)
+        dload.save_unzip("https://github.com/MrEnder0/StoneBoardPackages/archive/refs/heads/experimental.zip")
         os.rename(source, dest)
         from experimental.StoneBoardPackagesexperimental.home import *
         startHome()
     else:
-        shutil.rmtree("stable")
-        os.remove('stable.zip')
-        time.sleep(0.5)
-        dload.save_unzip("https://github.com/MrEnder0/StoneBoardPackages/archive/refs/heads/stable.zip")
         source = 'stable/StoneBoardPackages-stable'
         dest = 'stable/StoneBoardPackagesstable'
+        #delete old packages without error
+        try:
+            os.remove('stable.zip')
+        except OSError:
+            print("No packages found making new ones")
+            pass
+        try:
+            shutil.rmtree("stable")
+        except OSError:
+            pass
+        
+        print("Installing new stable packages")
+        time.sleep(0.5)
+        dload.save_unzip("https://github.com/MrEnder0/StoneBoardPackages/archive/refs/heads/stable.zip")
         os.rename(source, dest)
         from stable.StoneBoardPackagesstable.home import *
         startHome()
