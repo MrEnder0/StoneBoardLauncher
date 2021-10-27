@@ -7,11 +7,11 @@ import os
 if CheckForUpdates == True:
     startLauncher()
     if Experintal == True:
-        source = 'experimental/StoneBoardPackages-experimental'
-        dest = 'experimental/StoneBoardPackagesexperimental'
+        source = "experimental/StoneBoardPackages-experimental"
+        dest = "experimental/StoneBoardPackagesexperimental"
         #delete old packages without error
         try:
-            os.remove('experimental.zip')
+            os.remove("experimental.zip")
         except OSError:
             pass
         try:
@@ -27,11 +27,11 @@ if CheckForUpdates == True:
         from experimental.StoneBoardPackagesexperimental.home import *
         startHome()
     else:
-        source = 'stable/StoneBoardPackages-stable'
-        dest = 'stable/StoneBoardPackagesstable'
+        source = "stable/StoneBoardPackages-stable"
+        dest = "stable/StoneBoardPackagesstable"
         #delete old packages without error
         try:
-            os.remove('stable.zip')
+            os.remove("stable.zip")
         except OSError:
             print("No packages found making new ones")
             pass
