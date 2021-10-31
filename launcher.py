@@ -45,7 +45,7 @@ def startLauncher():
       self.image = pygame.transform.scale(self.image, (int(width * scale), int(height * scale)))
 
   #Is experimental test
-  if Experintal == True:
+  if Experintal:
     stoneBoard_experimentalRelease = pygame.image.load('artAssets/stoneBoard_experimentalRelease.png').convert_alpha()
     stoneBoard_experimentalRelease = pygame.transform.scale(stoneBoard_experimentalRelease, (80, 80))
     screen.blit(stoneBoard_experimentalRelease,(0,-25))
@@ -66,10 +66,12 @@ def startLauncher():
   
   while run:
     current_time = pygame.time.get_ticks()
+
     screen.fill(launcher_background_colour)
     screen.blit(stoneBoard_logo_rectangle,(365, -105))
-    screen.blit(stoneBoard_experimentalRelease,(0,-25))
     screen.blit(stoneBoard_logo,(378,5))
+    if Experintal:
+      screen.blit(stoneBoard_experimentalRelease,(0,-25))
     loadingGif.draw()
     loadingGif.update(11)
     pygame.display.flip()
