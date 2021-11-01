@@ -1,3 +1,4 @@
+from packageManager import *
 from config import *
 from home import *
 import pygame
@@ -12,6 +13,7 @@ def startLauncher():
   screen.fill(launcher_background_colour)
   print("Launched Launcher")
   clock = pygame.time.Clock()
+  packageDownloaded = 0
   run = True
 
   class Gif(pygame.sprite.Sprite):
@@ -76,7 +78,7 @@ def startLauncher():
     loadingGif.update(11)
     pygame.display.flip()
 
-    if current_time > 8000:
+    if packageDownloaded == 1:
       run = False
 
     for event in pygame.event.get():
