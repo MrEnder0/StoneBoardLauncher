@@ -12,7 +12,6 @@ def startLauncher():
   launcher_background_colour = (250,250,250)
   screen.fill(launcher_background_colour)
   print("Launched Launcher")
-  clock = pygame.time.Clock()
   packageDownloaded = 0
   run = True
 
@@ -67,8 +66,6 @@ def startLauncher():
   loadingGif = Gif(256, 375)
   
   while run:
-    current_time = pygame.time.get_ticks()
-
     screen.fill(launcher_background_colour)
     screen.blit(stoneBoard_logo_rectangle,(365, -105))
     screen.blit(stoneBoard_logo,(378,5))
