@@ -5,7 +5,7 @@ import pygame
 import dload
 import os
 
-def(downloadPackage):
+def downloadPackage():
   packagesDownloaded = False
   if CheckForUpdates == True:
     if Experintal == True:
