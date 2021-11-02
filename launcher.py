@@ -34,7 +34,7 @@ def startLauncher():
       screen.blit(self.image, (self.rect.x, self.rect.y))
 
     def update(self, scale):
-      self.current_sprite += 0.007
+      self.current_sprite += 0.006
 
       if self.current_sprite >= len(self.sprites):
         time.sleep(0.30)
