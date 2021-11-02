@@ -1,7 +1,9 @@
+from packageManager import *
 from config import *
 from home import *
 import pygame
 import time
+import os
 
 def startLauncher():
   pygame.init()
@@ -11,7 +13,6 @@ def startLauncher():
   launcher_background_colour = (250,250,250)
   screen.fill(launcher_background_colour)
   print("Launched Launcher")
-  clock = pygame.time.Clock()
   run = True
 
   class Gif(pygame.sprite.Sprite):
@@ -65,8 +66,6 @@ def startLauncher():
   loadingGif = Gif(256, 375)
   
   while run:
-    current_time = pygame.time.get_ticks()
-
     screen.fill(launcher_background_colour)
     screen.blit(stoneBoard_logo_rectangle,(365, -105))
     screen.blit(stoneBoard_logo,(378,5))
@@ -76,8 +75,14 @@ def startLauncher():
     loadingGif.update(11)
     pygame.display.flip()
 
-    if current_time > 8000:
-      run = False
+    if Experintal:
+      downloaded = os.path.isdir("experimental")
+      if downloaded:
+        run = False
+    else:
+      downloaded = os.path.isdir("stable")
+      if downloaded:
+        run = False
 
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
