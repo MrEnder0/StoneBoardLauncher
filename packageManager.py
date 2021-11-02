@@ -1,12 +1,12 @@
+from launcher import *
 from config import *
 import threading
-import shutill
+import shutil
 import pygame
 import dload
 import os
 
 def downloadPackage():
-  packagesDownloaded = False
   if CheckForUpdates == True:
     if Experintal == True:
         source = "experimental/StoneBoardPackages-experimental"
@@ -47,13 +47,13 @@ def downloadPackage():
         os.rename(source, dest)
         packagesDownloaded = True
         
-elif CheckForUpdates == False:
+  elif CheckForUpdates == False:
     if Experintal == True:
       packagesDownloaded = True
     else:
       packagesDownloaded = True
         
-else:
+  else:
     print("Err you can only set CheckForUpdates to True or False or to 1 or 0")
     time.sleep(3)
     quit()
