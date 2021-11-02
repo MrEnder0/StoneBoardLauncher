@@ -3,6 +3,7 @@ from config import *
 from home import *
 import pygame
 import time
+import os
 
 def startLauncher():
   pygame.init()
@@ -12,7 +13,6 @@ def startLauncher():
   launcher_background_colour = (250,250,250)
   screen.fill(launcher_background_colour)
   print("Launched Launcher")
-  packageDownloaded = 0
   run = True
 
   class Gif(pygame.sprite.Sprite):
@@ -34,7 +34,7 @@ def startLauncher():
       screen.blit(self.image, (self.rect.x, self.rect.y))
 
     def update(self, scale):
-      self.current_sprite += 0.006
+      self.current_sprite += 0.007
 
       if self.current_sprite >= len(self.sprites):
         time.sleep(0.30)
@@ -75,7 +75,8 @@ def startLauncher():
     loadingGif.update(11)
     pygame.display.flip()
 
-    if packageDownloaded == 1:
+    downloaded = os.path.isdir("experimental")
+    if downloaded:
       run = False
 
     for event in pygame.event.get():
