@@ -75,9 +75,14 @@ def startLauncher():
     loadingGif.update(11)
     pygame.display.flip()
 
-    downloaded = os.path.isdir("experimental")
-    if downloaded:
-      run = False
+    if Experintal:
+      downloaded = os.path.isdir("experimental")
+      if downloaded:
+        run = False
+    else:
+      downloaded = os.path.isdir("stable")
+      if downloaded:
+        run = False
 
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
