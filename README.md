@@ -6,11 +6,13 @@ Features:
 A whiteboard 
 Auto Updates your packages
 Save multiple boards
-Home dashboard with many interactions
+Home dashboard
 Customizable config
 Music and sounds
 
 To come:
 Actual art that's not as bad as mine
-Settings
+A smart auto update system
+A scale setting
+Settings gui
 Plugins
